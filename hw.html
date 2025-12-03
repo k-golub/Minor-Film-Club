@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киноклуб НИУ ВШЭ</title>
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Навигация */
+        .nav {
+            background: #003087;
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        
+        .nav a:hover,
+        .nav a.current {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Контент */
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        /* Карточки фильмов */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .movie-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .movie-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        /* Форма */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin: 10px 0;
+        }
+        
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        
+        .submit-btn {
+            background: #003087;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .submit-btn:hover {
+            background: #002366;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav a {
+                margin: 5px 0;
+                width: 90%;
+                text-align: center;
+            }
+            
+            .movies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .movies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Внутренняя навигация */
+        .page-nav {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .page-nav a {
+            color: #003087;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .page-nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <div class="nav">
+        <a href="http://www.hse.ru" target="_blank"><img src="file:///C:/Users/holub/AppData/Local/Temp/3d65b239-6fc2-41cb-b846-13b95a6db6d1_Logo_HSE_full_rus_for_dark_2.zip.6d1/PANTONE/01_Logo_HSE_full_rus_PANTONE_for_dark_2.svg" height="40px" ></a>
+        <a href="#main" class="nav-link current">Главная</a>
+        <a href="#afisha" class="nav-link">Афиша</a>
+        <a href="#register" class="nav-link">Зарегистрироваться</a>
+    </div>
+
+    <!-- Главная страница -->
+      <div id="main" class="content">
+        <h1>Киноклуб НИУ ВШЭ</h1>
+        <div class="page-nav">
+            <a href="#section1">О киноклубе</a>
+            <a href="#section2">Расписание</a>
+        </div>
+        
+        <h2 id="section1">О киноклубе</h2>
+        <p>Мы сообщество студентов НИУ ВШЭ, увлеченных кинематографом. На наших встречах мы смотрим и обсуждаем фильмы разных жанров и эпох. Присоединяйтесь!</p>
+        
+        <div style="margin: 20px 0; text-align: center;">
+            <img src="https://yalovagazetesicom.teimg.com/crop/1280x720/yalovagazetesi-com/uploads/2025/09/haber/yalova-ozdilek-sinema-yeni-hafta-vizyon.jpg" width="640" height="360" alt="Кинозал">
+            
+        </div>
+        
+        <h2 id="section2">Расписание встреч</h2>
+        <p>Встречи проходят каждую пятницу в 19:00 в аудитории 325.</p>
+        <a href="#top" target="_self">к началу страницы</a>
+    </div>
+
+
+    <!-- Афиша -->
+    <div id="afisha" class="content" style="display: none;">
+        <h1>Афиша</h1>
+        <div class="page-nav">
+            <a href="#new">Смотрим в декабре</a>
+            <a href="#classic">Классика</a>
+            
+        </div>
+        
+        <h2 id="new">Декабрь</h2>
+        <div class="movies-grid" id="movies-container">
+            <!-- Фильмы через JS -->
+        </div>
+        
+        <h2 id="classic">Классика кинематографа</h2>
+        <div style="margin: 20px 0; text-align: center;">
+            <img src="https://th.bing.com/th/id/R.bf3d270a27e2306c07de74cdf0bc070a?rik=4mhNP4mTyVdWKQ&riu=http%3a%2f%2fwww.moviepostersetc.com%2f_staticProxy%2fcontent%2fff808081163c05b001169d6655243ae9%2fNosferatu_Max_Schreck_poster.jpg&ehk=WHEH5tET%2f5T6nrLGeAtkdNW6AwONmA8aKsf5uydNPP8%3d&risl=&pid=ImgRaw&r=0">
+            <p style="color: #666; font-size: 0.9em; margin-top: 5px;">Каждый месяц мы показываем классические фильмы</p>
+        </div>
+        <a href="#top" target="_self">к началу страницы</a>
+    </div>
+
+    <!-- Регистрация -->
+    <div id="register" class="content" style="display: none;">
+        <h1>Зарегистрироваться</h1>
+        <div class="page-nav">
+            <a href="#form">Форма регистрации</a>
+            <a href="#rules">Правила</a>
+        </div>
+        
+        <h2 id="rules">Правила участия</h2>
+        <p>Для участия в мероприятиях киноклуба необходимо зарегистрироваться.</p>
+        
+        <h2 id="form">Форма регистрации</h2>
+                 <form action="https://www.bing.com/search?" id="OrderForm" name="OrderForm" target="_blank">
+                    <input type="hidden" name="q" value="search">
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Фамилия:</label>
+                            <input type="text" class="form-control" name="customer_surname" value="Голуб"
+                                required>
+                        </div>
+
+                        <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Имя:</label>
+                            <input type="text" class="form-control" name="customer_name" value="Екатерина"
+                                required>
+                        </div>
+
+                       <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Отчество:</label>
+                            <input type="text" class="form-control" name="customer_fathername" value="Александровна"
+                                required>
+                        </div>
+
+
+                            <p>Пол: <input type="radio" name="gender" value="female" checked>Женский
+        <input type="radio" name="gender" value="male">Мужской </p>
+
+
+                        <div class="col-md-6">
+                            <label class="form-label">Email:</label>
+                            <input type="text" class="form-control" name="customer_email" value="example@gmail.com"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Телефон:</label>
+                            <input type="text" class="form-control" name="customer_phone" value="+7 900 000-00-00"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Название ОП</label>
+                            <select class="form-select" name="jersey_size" required>
+                                <option value="BI">Бинес-информатика</option>
+                                <option value="MB">Международный бакалавриат</option>
+                                <option value="AE">Аналитика в экономике</option>
+                                <option value="UB">Управление бизнесом</option>
+                                  <option value="PO">Политология</option>
+                                 <option value="SO">Социология</option>
+                                 <option value="PHY">Физика</option>
+                                 <option value="AM">Прикладная математика</option>   
+                                 <option value="JU">Юриспруденция</option> 
+                                 <option value="UAGS">УАГС</option>
+                                 <option value="HIS">История</option>
+                                 <option value="PHIL" selected>Филология</option>
+                                 <option value="ORI">Востоковедение</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Курс:</label>
+                            <input type="number" class="form-control" name="jersey_number" min="1" max="5" value="2"
+                                required>
+                        </div>
+                        </div>
+                       
+                    
+
+                    <div class="mb-3">
+                        <label class="form-label">Название фильма:</label>
+                        <textarea class="form-control" name="order_comment"
+                            rows="3">Сумерки</textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Дата кинопоказа:</label>
+                        <input type="date" class="form-control" name="desired_date" value="2025-21-12">
+                    </div>
+
+                    <div class="text-center">
+                        <input type="reset" class="btn btn-secondary me-2" value="Очистить форму">
+                        <input type="submit" class="btn btn-primary" value="Зарегистрироваться">
+                    </div>
+                </form>
+    </div>
+
+    <!-- Отзывы -->
+    <div id="reviews" class="content" style="display: none;">
+        <h1>Оставить отзыв</h1>
+        <div class="page-nav">
+            <a href="#write-review">Написать отзыв</a>
+            <a href="#reviews-list">Все отзывы</a>
+            <a href="#reviews">К началу</a>
+        </div>
+        
+        <h2 id="write-review">Написать отзыв</h2>
+        <form id="review-form" onsubmit="submitReview(event)">
+            <div class="form-group">
+                <label for="reviewer-name">Ваше имя:</label>
+                <input type="text" id="reviewer-name" name="reviewer_name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="film-rating">Оценка фильма (1-10):</label>
+                <input type="number" id="film-rating" name="film_rating" class="form-control" min="1" max="10" value="5" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Рекомендуете фильм?</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="recommend" value="yes" checked>
+                        Да
+                    </label>
+                    <label>
+                        <input type="radio" name="recommend" value="no">
+                        Нет
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="review-text">Текст отзыва:</label>
+                <textarea id="review-text" name="review_text" class="form-control" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Отправить отзыв</button>
+        </form>
+        
+        <h2 id="reviews-list">Последние отзывы</h2>
+        <div id="reviews-container">
+            <!-- Отзывы будут добавлены через JS -->
+        </div>
+    </div>
+
+    <script>
+        // Данные фильмов
+        const movies = [
+            { title: "Сумерки", year: 2008, director: "Кэтрин Хардвик", image: "https://upload.wikimedia.org/wikipedia/ru/6/63/%D0%A1%D1%83%D0%BC%D0%B5%D1%80%D0%BA%D0%B8_%28%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%2C_2008%29.jpg" },
+            { title: "Общество мертвых поэтов", year: 1989, director: "Питер Уир", image: "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/a4769c1d-4425-4f9d-9b14-d6b3b8d5aa36/3840x" },
+            { title: "Гарри Поттер и философский камень", year: 2001, director: "Крис Коламбус", image: "https://upload.wikimedia.org/wikipedia/ru/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_%E2%80%94_movie.jpg" },
+            { title: "Реальные упыри", year: 2014, director: "Тайка Вайтити", image: "https://upload.wikimedia.org/wikipedia/ru/d/d8/%D0%A7%D1%82%D0%BE_%D0%BC%D1%8B_%D0%B4%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC_%D0%B2_%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D1%82%D0%B5.jpg" },
+            { title: "Слово пацана", year: 2023, director: "Жора Крыжовников", image: "https://upload.wikimedia.org/wikipedia/ru/thumb/c/c3/%D0%A1%D0%BB%D0%BE%D0%B2%D0%BE_%D0%BF%D0%B0%D1%86%D0%B0%D0%BD%D0%B0_poster.jpg/960px-%D0%A1%D0%BB%D0%BE%D0%B2%D0%BE_%D0%BF%D0%B0%D1%86%D0%B0%D0%BD%D0%B0_poster.jpg" },
+            { title: "Взломать блоггеров", year: 2016, director: "Максим Свешников", image: "https://upload.wikimedia.org/wikipedia/ru/1/19/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0_%D0%92%D0%B7%D0%BB%D0%BE%D0%BC%D0%B0%D1%82%D1%8C_%D0%B1%D0%BB%D0%BE%D0%B3%D0%B5%D1%80%D0%BE%D0%B2.jpg" },
+            { title: "Мальчишник в Вегасе", year: 2009, director: "Тодд Филлипс", image: "https://upload.wikimedia.org/wikipedia/ru/c/cd/The_Hangover.jpg" },
+            { title: "Бойцовский клуб", year: 1999, director: "Дэвид Финчер", image: "https://upload.wikimedia.org/wikipedia/ru/8/8a/Fight_club.jpg" },
+            { title: "Мальчкик в полосатой пижаме", year: 2008, director: "Марк Херман", image: "https://upload.wikimedia.org/wikipedia/ru/8/8e/The_Boy_in_the_Striped_Pyjamas_%28russian%29.jpg" },
+            { title: "Паразиты", year: 2019, director: "Пон Джун Хо", image: "https://upload.wikimedia.org/wikipedia/ru/7/77/%D0%A4%D0%B8%D0%BB%D1%8C%D0%BC_%D0%9F%D0%B0%D1%80%D0%B0%D0%B7%D0%B8%D1%82%D1%8B_%28Gisaengchung%29.png" },
+            { title: "Джокер", year: 2019, director: "Тодд Филлипс", image: "https://upload.wikimedia.org/wikipedia/ru/6/6f/%D0%94%D0%B6%D0%BE%D0%BA%D0%B5%D1%80_%28%D1%84%D0%B8%D0%BB%D1%8C%D0%BC_%D0%A2%D0%BE%D0%B4%D0%B4%D0%B0_%D0%A4%D0%B8%D0%BB%D0%BB%D0%B8%D0%BF%D1%81%D0%B0%29.jpg" },
+            { title: "Смерть в Венеции", year: 1971, director: "Лукино Висконти", image: "https://upload.wikimedia.org/wikipedia/ru/2/27/DEATH_IN_VENICE.jpg" }
+        ];
+
+        // Отзывы
+        const sampleReviews = [
+            { name: "Анна Иванова", rating: 9, recommend: "yes", text: "Отличный фильм, рекомендую всем!" },
+            { name: "Петр Сидоров", rating: 7, recommend: "yes", text: "Хорошая игра актеров, интересный сюжет." }
+        ];
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Загружаем фильмы
+            loadMovies();
+            
+            // Загружаем отзывы
+            loadReviews();
+            
+            // Настройка навигации
+            setupNavigation();
+            
+            // Показываем главную страницу
+            showPage('main');
+        });
+
+        // Загрузка фильмов
+        function loadMovies() {
+            const container = document.getElementById('movies-container');
+            container.innerHTML = '';
+            
+            movies.forEach(movie => {
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                movieCard.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                    <p>Год: ${movie.year}</p>
+                    <p>Режиссер: ${movie.director}</p>
+                `;
+                container.appendChild(movieCard);
+            });
+        }
+
+        // Загрузка отзывов
+        function loadReviews() {
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '';
+            
+            sampleReviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'movie-card';
+                reviewElement.innerHTML = `
+                    <h3>${review.name}</h3>
+                    <p>Оценка: ${review.rating}/10</p>
+                    <p>Рекомендует: ${review.recommend === 'yes' ? 'Да' : 'Нет'}</p>
+                    <p>${review.text}</p>
+                `;
+                container.appendChild(reviewElement);
+            });
+        }
+
+        // Настройка навигации
+        function setupNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('href').substring(1);
+                    showPage(pageId);
+                    
+                    // Обновляем активную ссылку
+                    navLinks.forEach(l => l.classList.remove('current'));
+                    this.classList.add('current');
+                });
+            });
+        }
+
+        // Показать страницу
+        function showPage(pageId) {
+            // Скрыть все страницы
+            const pages = document.querySelectorAll('.content');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Показать выбранную страницу
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.style.display = 'block';
+            }
+        }
+
+        // Отправка формы регистрации
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = {
+                user_name: document.getElementById('user-name').value,
+                user_age: document.getElementById('user-age').value,
+                faculty: document.querySelector('input[name="faculty"]:checked').value
+            };
+            
+            // Отправка на удаленный сервер
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Регистрация успешно отправлена!');
+                document.getElementById('registration-form').reset();
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка отправки формы. Проверьте соединение.');
+            });
+        }
+
+        // Отправка отзыва
+        function submitReview(event) {
+            event.preventDefault();
+            
+            const formData = {
+                reviewer_name: document.getElementById('reviewer-name').value,
+                film_rating: document.getElementById('film-rating').value,
+                recommend: document.querySelector('input[name="recommend"]:checked').value,
+                review_text: document.getElementById('review-text').value
+            };
+            
+            // Отправка на удаленный сервер
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Отзыв успешно отправлен!');
+                document.getElementById('review-form').reset();
+                
+                // Добавляем отзыв в список
+                const container = document.getElementById('reviews-container');
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'movie-card';
+                reviewElement.innerHTML = `
+                    <h3>${formData.reviewer_name}</h3>
+                    <p>Оценка: ${formData.film_rating}/10</p>
+                    <p>Рекомендует: ${formData.recommend === 'yes' ? 'Да' : 'Нет'}</p>
+                    <p>${formData.review_text}</p>
+                `;
+                container.insertBefore(reviewElement, container.firstChild);
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка отправки отзыва. Проверьте соединение.');
+            });
+        }
+    </script>
+</body>
+</html>
